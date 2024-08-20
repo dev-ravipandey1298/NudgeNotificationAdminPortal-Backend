@@ -7,4 +7,10 @@ import com.hdfc.notificationadminportal.services.MakerService;
 @Service
 public class MackerServiceImpl implements MakerService {
 
+    @Override
+    public String createNudgeTemplate() {
+        
+        throw new UnsupportedOperationException("Unimplemented method 'createNudgeTemplate'");
+    }
+
 }
