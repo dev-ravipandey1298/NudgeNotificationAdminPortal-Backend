@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.notification.notificationadmin.dto.CUGUserDto;
-import com.notification.notificationadmin.dto.ResponseCUGUserDto;
+import com.notification.notificationadmin.dto.ResponseDto;
 import com.notification.notificationadmin.service.ICUGUserService;
 
 import jakarta.validation.Valid;
@@ -33,25 +33,25 @@ public class CUGUserController {
 	private ICUGUserService iCUGUserManagementService;
 
 	@PostMapping(value = "/users", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ResponseCUGUserDto> createCUGUsers(@Valid @RequestBody List<CUGUserDto> cugUsers) {
+	public ResponseEntity<ResponseDto> createCUGUsers(@Valid @RequestBody List<CUGUserDto> cugUsers) {
 		Integer count = iCUGUserManagementService.createCUGUser(cugUsers);
 		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(new ResponseCUGUserDto(Map.of("count",count), "CUG user created successfully"));
+				.body(new ResponseDto(Map.of("count",count), "CUG user created successfully"));
 	}
 
 	@DeleteMapping(value = "/users", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ResponseCUGUserDto> deleteCUGUsers(
+	public ResponseEntity<ResponseDto> deleteCUGUsers(
 			@Valid @RequestBody List<@Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits") String> mobileNumbers) {
 		Integer count = iCUGUserManagementService.deleteCUGUser(mobileNumbers);
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(new ResponseCUGUserDto(Map.of("count",count), "CUG user deleted successfully"));
+				.body(new ResponseDto(Map.of("count",count), "CUG user deleted successfully"));
 	}
 	
 	@GetMapping(value = "/users")
-	public ResponseEntity<ResponseCUGUserDto> getAllCUGUsers() {
+	public ResponseEntity<ResponseDto> getAllCUGUsers() {
 		List<CUGUserDto> listCUGUsers = iCUGUserManagementService.getAllCUGUsers();
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(new ResponseCUGUserDto(listCUGUsers, "Data fetched successfully"));
+				.body(new ResponseDto(listCUGUsers, "Data fetched successfully"));
 	}
 
 }

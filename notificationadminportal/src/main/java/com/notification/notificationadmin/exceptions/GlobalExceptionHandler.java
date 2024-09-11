@@ -49,7 +49,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 	
 	@ExceptionHandler(CUGUserAlreadyExistsException.class)
-    public ResponseEntity<ErrorResponseDto> handleCustomerAlreadyExistsException(CUGUserAlreadyExistsException exception,
+    public ResponseEntity<ErrorResponseDto> handleCUGUserAlreadyExistsException(CUGUserAlreadyExistsException exception,
                                                                                  WebRequest webRequest){
         ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
                 webRequest.getDescription(false),
@@ -59,4 +59,16 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         );
         return new ResponseEntity<>(errorResponseDTO, HttpStatus.BAD_REQUEST);
     }
+	
+	@ExceptionHandler(TemplateNotFoundException.class)
+	public ResponseEntity<ErrorResponseDto> handleTemplateNotFoundException(TemplateNotFoundException exception,
+			WebRequest webRequest){
+		ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
+				webRequest.getDescription(false),
+				HttpStatus.NOT_FOUND,
+				exception.getMessage(),
+				LocalDateTime.now()
+				);
+		return new ResponseEntity<>(errorResponseDTO, HttpStatus.NOT_FOUND);
+	}
 }
