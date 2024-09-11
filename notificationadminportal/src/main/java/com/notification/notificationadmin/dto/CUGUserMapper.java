@@ -1,9 +1,9 @@
-package com.hdfc.notificationadminportal.dto;
+package com.notification.notificationadmin.dto;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.hdfc.notificationadminportal.entity.CUGUser;
+import com.notification.notificationadmin.entity.CUGUser;
 
 public class CUGUserMapper {
 	

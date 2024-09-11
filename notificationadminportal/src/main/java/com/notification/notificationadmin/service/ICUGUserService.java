@@ -1,8 +1,8 @@
-package com.hdfc.notificationadminportal.services;
+package com.notification.notificationadmin.service;
 
 import java.util.List;
 
-import com.hdfc.notificationadminportal.dto.CUGUserDto;
+import com.notification.notificationadmin.dto.CUGUserDto;
 
 public interface ICUGUserService {
 	

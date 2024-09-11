@@ -1,4 +1,4 @@
-package com.hdfc.notificationadminportal.audit;
+package com.notification.notificationadmin.audit;
 
 import java.util.Optional;
 

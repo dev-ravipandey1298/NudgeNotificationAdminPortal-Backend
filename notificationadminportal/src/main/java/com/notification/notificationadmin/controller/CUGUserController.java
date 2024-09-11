@@ -1,4 +1,4 @@
-package com.hdfc.notificationadminportal.controller;
+package com.notification.notificationadmin.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hdfc.notificationadminportal.dto.CUGUserDto;
-import com.hdfc.notificationadminportal.dto.ResponseCUGUserDto;
-import com.hdfc.notificationadminportal.services.ICUGUserService;
+import com.notification.notificationadmin.dto.CUGUserDto;
+import com.notification.notificationadmin.dto.ResponseCUGUserDto;
+import com.notification.notificationadmin.service.ICUGUserService;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
@@ -27,7 +27,9 @@ import lombok.AllArgsConstructor;
 @Validated
 @RequestMapping("/notification-portal/cug")
 public class CUGUserController {
-
+	/***
+	 *  All API has Maker and Checker Role.
+	 */
 	private ICUGUserService iCUGUserManagementService;
 
 	@PostMapping(value = "/users", consumes = MediaType.APPLICATION_JSON_VALUE)

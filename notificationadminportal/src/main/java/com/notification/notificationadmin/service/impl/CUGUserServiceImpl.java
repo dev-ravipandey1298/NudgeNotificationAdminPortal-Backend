@@ -1,16 +1,16 @@
-package com.hdfc.notificationadminportal.services.impl;
+package com.notification.notificationadmin.service.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.hdfc.notificationadminportal.dto.CUGUserDto;
-import com.hdfc.notificationadminportal.dto.CUGUserMapper;
-import com.hdfc.notificationadminportal.entity.CUGUser;
-import com.hdfc.notificationadminportal.exceptions.CUGUserAlreadyExistsException;
-import com.hdfc.notificationadminportal.repository.ICUGUserRepository;
-import com.hdfc.notificationadminportal.services.ICUGUserService;
+import com.notification.notificationadmin.dto.CUGUserDto;
+import com.notification.notificationadmin.dto.CUGUserMapper;
+import com.notification.notificationadmin.entity.CUGUser;
+import com.notification.notificationadmin.exceptions.CUGUserAlreadyExistsException;
+import com.notification.notificationadmin.repository.ICUGUserRepository;
+import com.notification.notificationadmin.service.ICUGUserService;
 
 import lombok.AllArgsConstructor;
 

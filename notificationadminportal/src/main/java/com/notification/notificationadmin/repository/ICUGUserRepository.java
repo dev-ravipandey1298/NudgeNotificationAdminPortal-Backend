@@ -1,10 +1,10 @@
-package com.hdfc.notificationadminportal.repository;
+package com.notification.notificationadmin.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.hdfc.notificationadminportal.entity.CUGUser;
+import com.notification.notificationadmin.entity.CUGUser;
 
 public interface ICUGUserRepository extends JpaRepository<CUGUser, String>{
 	

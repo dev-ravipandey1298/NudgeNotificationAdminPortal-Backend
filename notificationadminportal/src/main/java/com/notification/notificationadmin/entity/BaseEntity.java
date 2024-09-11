@@ -1,4 +1,4 @@
-package com.hdfc.notificationadminportal.entity;
+package com.notification.notificationadmin.entity;
 
 import java.time.LocalDateTime;
 

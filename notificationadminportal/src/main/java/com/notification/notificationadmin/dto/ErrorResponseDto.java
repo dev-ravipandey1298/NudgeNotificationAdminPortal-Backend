@@ -1,4 +1,4 @@
-package com.hdfc.notificationadminportal.dto;
+package com.notification.notificationadmin.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
