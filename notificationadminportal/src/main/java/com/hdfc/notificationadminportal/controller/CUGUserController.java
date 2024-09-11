@@ -33,7 +33,6 @@ public class CUGUserController {
 	@PostMapping(value = "/users", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<ResponseCUGUserDto> createCUGUsers(@Valid @RequestBody List<CUGUserDto> cugUsers) {
 		Integer count = iCUGUserManagementService.createCUGUser(cugUsers);
-		System.out.println(cugUsers.toString());
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(new ResponseCUGUserDto(Map.of("count",count), "CUG user created successfully"));
 	}
