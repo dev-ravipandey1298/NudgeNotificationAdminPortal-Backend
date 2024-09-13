@@ -1,7 +1,8 @@
 package com.notification.notificationadmin.dto;
 
-import java.time.LocalDateTime;
 import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,4 +20,16 @@ public class DraftTemplate {
 	private String occurrenceFrequency;
 	private String occurrenceUnit;
 	private List<Integer> occurrenceDays;
+	private String makerComment;
+	private String checkerCugComment;
+	private String checkerFinalComment;
+	private String status;
+	private boolean isActive;
+	private String createdOn;
+	private String updatedOn;
+	private String createdBy;
+	private String updatedBy;
+	private String approvedBy;
+	private String approvedOn;
+	private MultipartFile file;
 }

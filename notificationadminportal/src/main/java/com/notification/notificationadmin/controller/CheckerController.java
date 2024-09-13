@@ -23,47 +23,47 @@ import lombok.AllArgsConstructor;
 /**
  * Working on it
  */
-@RestController
-@RequestMapping("/notification-portal/templates")
-@AllArgsConstructor
-@Validated
-public class CheckerController {
-
-	INotificationDraftTemplateService iNotificationDraftTemplateService;
-
-	@PatchMapping(value = "/{templateId}/cug-reject", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ResponseDto> rejectTemplateCUG(
-			@PathVariable @Min(value = 1, message = "templateId should not less than 1") Integer templateId,
-			@Valid @RequestBody CheckerCommentDto checkerComment) {
-		Integer returnId = iNotificationDraftTemplateService.rejectTemplateCUG(templateId, checkerComment);
-		return ResponseEntity.status(HttpStatus.OK).body(
-				new ResponseDto(Map.of("templateId", returnId.toString()), "Template status updated successfully."));
-	}
-
-	@PatchMapping(value = "{templateId}/cug-approved", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ResponseDto> approveTemplateCUG(
-			@PathVariable @Min(value = 1, message = "templateId should not less than 1") Integer templateId,
-			@Valid @RequestBody CheckerCommentDto checkerComment) {
-		Integer returnId = iNotificationDraftTemplateService.approveTemplateCUG(templateId, checkerComment);
-		return ResponseEntity.status(HttpStatus.OK).body(
-				new ResponseDto(Map.of("templateId", returnId.toString()), "Template status updated successfully."));
-	}
-
-	@PatchMapping(value = "{templateId}/final-reject", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ResponseDto> rejectFinalTemplateProd(
-			@PathVariable @Min(value = 1, message = "templateId should not less than 1") Integer templateId,
-			@Valid @RequestBody CheckerCommentDto checkerComment) {
-		Integer returnId = iNotificationDraftTemplateService.rejectFinalTemplateProd(templateId, checkerComment);
-		return ResponseEntity.status(HttpStatus.OK).body(
-				new ResponseDto(Map.of("templateId", returnId.toString()), "Template status updated successfully."));
-	}
-
-	@PatchMapping(value = "{templateId}/final-approved", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ResponseDto> approveFinalTemplateProd(
-			@PathVariable @Min(value = 1, message = "templateId should not less than 1") Integer templateId,
-			@Valid @RequestBody CheckerCommentDto checkerComment) {
-		Integer returnId = iNotificationDraftTemplateService.approveFinalTemplateProd(templateId, checkerComment);
-		return ResponseEntity.status(HttpStatus.OK).body(
-				new ResponseDto(Map.of("templateId", returnId.toString()), "Template status updated successfully."));
-	}
-}
+//@RestController
+//@RequestMapping("/notification-portal/templates")
+//@AllArgsConstructor
+//@Validated
+//public class CheckerController {
+//
+//	INotificationDraftTemplateService iNotificationDraftTemplateService;
+//
+//	@PatchMapping(value = "/{templateId}/cug-reject", consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<ResponseDto> rejectTemplateCUG(
+//			@PathVariable @Min(value = 1, message = "templateId should not less than 1") Integer templateId,
+//			@Valid @RequestBody CheckerCommentDto checkerComment) {
+//		Integer returnId = iNotificationDraftTemplateService.rejectTemplateCUG(templateId, checkerComment);
+//		return ResponseEntity.status(HttpStatus.OK).body(
+//				new ResponseDto(Map.of("templateId", returnId.toString()), "Template status updated successfully."));
+//	}
+//
+//	@PatchMapping(value = "{templateId}/cug-approved", consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<ResponseDto> approveTemplateCUG(
+//			@PathVariable @Min(value = 1, message = "templateId should not less than 1") Integer templateId,
+//			@Valid @RequestBody CheckerCommentDto checkerComment) {
+//		Integer returnId = iNotificationDraftTemplateService.approveTemplateCUG(templateId, checkerComment);
+//		return ResponseEntity.status(HttpStatus.OK).body(
+//				new ResponseDto(Map.of("templateId", returnId.toString()), "Template status updated successfully."));
+//	}
+//
+//	@PatchMapping(value = "{templateId}/final-reject", consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<ResponseDto> rejectFinalTemplateProd(
+//			@PathVariable @Min(value = 1, message = "templateId should not less than 1") Integer templateId,
+//			@Valid @RequestBody CheckerCommentDto checkerComment) {
+//		Integer returnId = iNotificationDraftTemplateService.rejectFinalTemplateProd(templateId, checkerComment);
+//		return ResponseEntity.status(HttpStatus.OK).body(
+//				new ResponseDto(Map.of("templateId", returnId.toString()), "Template status updated successfully."));
+//	}
+//
+//	@PatchMapping(value = "{templateId}/final-approved", consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<ResponseDto> approveFinalTemplateProd(
+//			@PathVariable @Min(value = 1, message = "templateId should not less than 1") Integer templateId,
+//			@Valid @RequestBody CheckerCommentDto checkerComment) {
+//		Integer returnId = iNotificationDraftTemplateService.approveFinalTemplateProd(templateId, checkerComment);
+//		return ResponseEntity.status(HttpStatus.OK).body(
+//				new ResponseDto(Map.of("templateId", returnId.toString()), "Template status updated successfully."));
+//	}
+//}
